@@ -18,7 +18,7 @@ To run the Streamlit app locally, follow these steps:
 1. Clone this repository:
 
     ```
-    git clone https://github.com/theinit01/hate-speech-classifier.git
+    git clone https://github.com/theinit01/Twitter-Hate-Speech-Classifier
     ```
 
 2. Install the required dependencies:
