@@ -27,3 +27,438 @@
 2024-06-08 23:24:12,663 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/i/api/graphql/V7H0Ap3_Hh2FyS75OCDO3Q/UserTweets', 'session': <requests.sessions.Session object at 0x000001A0D53884D0>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {'params': {'variables': '{"userId": "813286", "count": 100, "includePromotedContent": true, "withQuickPromoteEligibilityTweetFields": true, "withVoice": true, "withV2Timeline": true}', 'features': '{"rweb_tipjar_consumption_enabled": true, "responsive_web_graphql_exclude_directive_enabled": true, "verified_phone_label_enabled": false, "creator_subscriptions_tweet_preview_api_enabled": true, "responsive_web_graphql_timeline_navigation_enabled": true, "responsive_web_graphql_skip_user_profile_image_extensions_enabled": false, "communities_web_enable_tweet_community_results_fetch": true, "c9s_tweet_anatomy_moderator_badge_enabled": true, "articles_preview_enabled": true, "tweetypie_unmention_optimization_enabled": true, "responsive_web_edit_tweet_api_enabled": true, "graphql_is_translatable_rweb_tweet_is_translatable_enabled": true, "view_counts_everywhere_api_enabled": true, "longform_notetweets_consumption_enabled": true, "responsive_web_twitter_article_tweet_consumption_enabled": true, "tweet_awards_web_tipping_enabled": false, "creator_subscriptions_quote_tweet_preview_enabled": false, "freedom_of_speech_not_reach_fetch_enabled": true, "standardized_nudges_misinfo": true, "tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled": true, "rweb_video_timestamps_enabled": true, "longform_notetweets_rich_text_read_enabled": true, "longform_notetweets_inline_media_enabled": true, "responsive_web_enhance_cards_enabled": false}'}}}
 2024-06-08 23:24:14,224 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /i/api/graphql/V7H0Ap3_Hh2FyS75OCDO3Q/UserTweets?variables=%7B%22userId%22%3A+%22813286%22%2C+%22count%22%3A+100%2C+%22includePromotedContent%22%3A+true%2C+%22withQuickPromoteEligibilityTweetFields%22%3A+true%2C+%22withVoice%22%3A+true%2C+%22withV2Timeline%22%3A+true%7D&features=%7B%22rweb_tipjar_consumption_enabled%22%3A+true%2C+%22responsive_web_graphql_exclude_directive_enabled%22%3A+true%2C+%22verified_phone_label_enabled%22%3A+false%2C+%22creator_subscriptions_tweet_preview_api_enabled%22%3A+true%2C+%22responsive_web_graphql_timeline_navigation_enabled%22%3A+true%2C+%22responsive_web_graphql_skip_user_profile_image_extensions_enabled%22%3A+false%2C+%22communities_web_enable_tweet_community_results_fetch%22%3A+true%2C+%22c9s_tweet_anatomy_moderator_badge_enabled%22%3A+true%2C+%22articles_preview_enabled%22%3A+true%2C+%22tweetypie_unmention_optimization_enabled%22%3A+true%2C+%22responsive_web_edit_tweet_api_enabled%22%3A+true%2C+%22graphql_is_translatable_rweb_tweet_is_translatable_enabled%22%3A+true%2C+%22view_counts_everywhere_api_enabled%22%3A+true%2C+%22longform_notetweets_consumption_enabled%22%3A+true%2C+%22responsive_web_twitter_article_tweet_consumption_enabled%22%3A+true%2C+%22tweet_awards_web_tipping_enabled%22%3A+false%2C+%22creator_subscriptions_quote_tweet_preview_enabled%22%3A+false%2C+%22freedom_of_speech_not_reach_fetch_enabled%22%3A+true%2C+%22standardized_nudges_misinfo%22%3A+true%2C+%22tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled%22%3A+true%2C+%22rweb_video_timestamps_enabled%22%3A+true%2C+%22longform_notetweets_rich_text_read_enabled%22%3A+true%2C+%22longform_notetweets_inline_media_enabled%22%3A+true%2C+%22responsive_web_enhance_cards_enabled%22%3A+false%7D HTTP/1.1" 200 36596
 2024-06-08 23:24:14,227 [DEBUG] [Line No. 155] tweeterpy.util : check_api_rate_limits :: {'total_limit': 50, 'remaining_requests_count': 49, 'resets_after': '0 Hours, 14 Minutes, 58.77 Seconds', 'reset_after_datetime_object': datetime.timedelta(seconds=898, microseconds=772688), 'rate_limit_exhausted': False}
+2024-06-08 23:30:49,692 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:30:49,694 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:30:50,261 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:30:50,266 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:30:50,948 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373836393635317d3b1394ef60781eb2deee9c7b6195708c HTTP/1.1" 200 None
+2024-06-08 23:30:51,213 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:30:51,486 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:30:51,779 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x000001CBD93FD790>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:30:51,780 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:30:52,389 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:30:52,392 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:30:52,392 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:30:52,392 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x000001CBD93FD790>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:30:52,732 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:30:52,897 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:30:52,899 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x000001CBD93FD790>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:30:52,900 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:30:53,000 [DEBUG] [Line No. 43] tweeterpy.request_util : make_request :: Retry No. ==> 1
+2024-06-08 23:30:53,003 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (2): abs.twimg.com:443
+2024-06-08 23:30:53,027 [DEBUG] [Line No. 43] tweeterpy.request_util : make_request :: Retry No. ==> 2
+2024-06-08 23:30:53,028 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (3): abs.twimg.com:443
+2024-06-08 23:30:53,065 [DEBUG] [Line No. 43] tweeterpy.request_util : make_request :: Retry No. ==> 3
+2024-06-08 23:30:53,065 [ERROR] [Line No. 45] tweeterpy.request_util : make_request :: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Traceback (most recent call last):
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 783, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 471, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 515, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1108, in _create
+    self.do_handshake()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1383, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 783, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 471, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 515, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1108, in _create
+    self.do_handshake()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1383, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\tweeterpy\request_util.py", line 26, in make_request
+    response = session.request(method, url, timeout=timeout, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 604, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2024-06-08 23:30:53,122 [WARNING] [Line No. 49] tweeterpy.api_util : __init__ :: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)) Couldn't get the latest API data.
+2024-06-08 23:30:53,123 [DEBUG] [Line No. 50] tweeterpy.api_util : __init__ :: Trying to restore API data from the backup file.
+2024-06-08 23:30:53,123 [DEBUG] [Line No. 171] tweeterpy.api_util : _load_api_data :: Restoring API data from the backup file.
+2024-06-08 23:30:53,132 [DEBUG] [Line No. 176] tweeterpy.api_util : _load_api_data :: API data restored successfully.
+2024-06-08 23:30:53,133 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:30:53,133 [DEBUG] [Line No. 49] tweeterpy.tweeterpy : _generate_request_data :: Request Payload => {'url': 'https://x.com/i/api/graphql/qW5u-DAuXpMEG0zA1F7UGQ/UserByScreenName', 'params': {'variables': '{"screen_name": "barackobama", "withSafetyModeUserFields": true}', 'features': '{"hidden_profile_likes_enabled": true, "hidden_profile_subscriptions_enabled": true, "rweb_tipjar_consumption_enabled": true, "responsive_web_graphql_exclude_directive_enabled": true, "verified_phone_label_enabled": false, "subscriptions_verification_info_is_identity_verified_enabled": true, "subscriptions_verification_info_verified_since_enabled": true, "highlights_tweets_tab_ui_enabled": true, "responsive_web_twitter_article_notes_tab_enabled": true, "creator_subscriptions_tweet_preview_api_enabled": true, "responsive_web_graphql_skip_user_profile_image_extensions_enabled": false, "responsive_web_graphql_timeline_navigation_enabled": true}'}, 'session': <requests.sessions.Session object at 0x000001CBD93FD790>}
+2024-06-08 23:30:53,133 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/i/api/graphql/qW5u-DAuXpMEG0zA1F7UGQ/UserByScreenName', 'session': <requests.sessions.Session object at 0x000001CBD93FD790>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {'params': {'variables': '{"screen_name": "barackobama", "withSafetyModeUserFields": true}', 'features': '{"hidden_profile_likes_enabled": true, "hidden_profile_subscriptions_enabled": true, "rweb_tipjar_consumption_enabled": true, "responsive_web_graphql_exclude_directive_enabled": true, "verified_phone_label_enabled": false, "subscriptions_verification_info_is_identity_verified_enabled": true, "subscriptions_verification_info_verified_since_enabled": true, "highlights_tweets_tab_ui_enabled": true, "responsive_web_twitter_article_notes_tab_enabled": true, "creator_subscriptions_tweet_preview_api_enabled": true, "responsive_web_graphql_skip_user_profile_image_extensions_enabled": false, "responsive_web_graphql_timeline_navigation_enabled": true}'}}}
+2024-06-08 23:30:53,474 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /i/api/graphql/qW5u-DAuXpMEG0zA1F7UGQ/UserByScreenName?variables=%7B%22screen_name%22%3A+%22barackobama%22%2C+%22withSafetyModeUserFields%22%3A+true%7D&features=%7B%22hidden_profile_likes_enabled%22%3A+true%2C+%22hidden_profile_subscriptions_enabled%22%3A+true%2C+%22rweb_tipjar_consumption_enabled%22%3A+true%2C+%22responsive_web_graphql_exclude_directive_enabled%22%3A+true%2C+%22verified_phone_label_enabled%22%3A+false%2C+%22subscriptions_verification_info_is_identity_verified_enabled%22%3A+true%2C+%22subscriptions_verification_info_verified_since_enabled%22%3A+true%2C+%22highlights_tweets_tab_ui_enabled%22%3A+true%2C+%22responsive_web_twitter_article_notes_tab_enabled%22%3A+true%2C+%22creator_subscriptions_tweet_preview_api_enabled%22%3A+true%2C+%22responsive_web_graphql_skip_user_profile_image_extensions_enabled%22%3A+false%2C+%22responsive_web_graphql_timeline_navigation_enabled%22%3A+true%7D HTTP/1.1" 200 1239
+2024-06-08 23:30:53,475 [DEBUG] [Line No. 155] tweeterpy.util : check_api_rate_limits :: {'total_limit': 95, 'remaining_requests_count': 94, 'resets_after': '0 Hours, 15 Minutes, 0.52 Seconds', 'reset_after_datetime_object': datetime.timedelta(seconds=900, microseconds=524899), 'rate_limit_exhausted': False}
+2024-06-08 23:30:53,476 [DEBUG] [Line No. 49] tweeterpy.tweeterpy : _generate_request_data :: Request Payload => {'url': 'https://x.com/i/api/graphql/V7H0Ap3_Hh2FyS75OCDO3Q/UserTweets', 'params': {'variables': '{"userId": "813286", "count": 100, "includePromotedContent": true, "withQuickPromoteEligibilityTweetFields": true, "withVoice": true, "withV2Timeline": true}', 'features': '{"rweb_tipjar_consumption_enabled": true, "responsive_web_graphql_exclude_directive_enabled": true, "verified_phone_label_enabled": false, "creator_subscriptions_tweet_preview_api_enabled": true, "responsive_web_graphql_timeline_navigation_enabled": true, "responsive_web_graphql_skip_user_profile_image_extensions_enabled": false, "communities_web_enable_tweet_community_results_fetch": true, "c9s_tweet_anatomy_moderator_badge_enabled": true, "articles_preview_enabled": true, "tweetypie_unmention_optimization_enabled": true, "responsive_web_edit_tweet_api_enabled": true, "graphql_is_translatable_rweb_tweet_is_translatable_enabled": true, "view_counts_everywhere_api_enabled": true, "longform_notetweets_consumption_enabled": true, "responsive_web_twitter_article_tweet_consumption_enabled": true, "tweet_awards_web_tipping_enabled": false, "creator_subscriptions_quote_tweet_preview_enabled": false, "freedom_of_speech_not_reach_fetch_enabled": true, "standardized_nudges_misinfo": true, "tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled": true, "rweb_video_timestamps_enabled": true, "longform_notetweets_rich_text_read_enabled": true, "longform_notetweets_inline_media_enabled": true, "responsive_web_enhance_cards_enabled": false}'}, 'session': <requests.sessions.Session object at 0x000001CBD93FD790>}
+2024-06-08 23:30:53,476 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/i/api/graphql/V7H0Ap3_Hh2FyS75OCDO3Q/UserTweets', 'session': <requests.sessions.Session object at 0x000001CBD93FD790>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {'params': {'variables': '{"userId": "813286", "count": 100, "includePromotedContent": true, "withQuickPromoteEligibilityTweetFields": true, "withVoice": true, "withV2Timeline": true}', 'features': '{"rweb_tipjar_consumption_enabled": true, "responsive_web_graphql_exclude_directive_enabled": true, "verified_phone_label_enabled": false, "creator_subscriptions_tweet_preview_api_enabled": true, "responsive_web_graphql_timeline_navigation_enabled": true, "responsive_web_graphql_skip_user_profile_image_extensions_enabled": false, "communities_web_enable_tweet_community_results_fetch": true, "c9s_tweet_anatomy_moderator_badge_enabled": true, "articles_preview_enabled": true, "tweetypie_unmention_optimization_enabled": true, "responsive_web_edit_tweet_api_enabled": true, "graphql_is_translatable_rweb_tweet_is_translatable_enabled": true, "view_counts_everywhere_api_enabled": true, "longform_notetweets_consumption_enabled": true, "responsive_web_twitter_article_tweet_consumption_enabled": true, "tweet_awards_web_tipping_enabled": false, "creator_subscriptions_quote_tweet_preview_enabled": false, "freedom_of_speech_not_reach_fetch_enabled": true, "standardized_nudges_misinfo": true, "tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled": true, "rweb_video_timestamps_enabled": true, "longform_notetweets_rich_text_read_enabled": true, "longform_notetweets_inline_media_enabled": true, "responsive_web_enhance_cards_enabled": false}'}}}
+2024-06-08 23:30:55,123 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /i/api/graphql/V7H0Ap3_Hh2FyS75OCDO3Q/UserTweets?variables=%7B%22userId%22%3A+%22813286%22%2C+%22count%22%3A+100%2C+%22includePromotedContent%22%3A+true%2C+%22withQuickPromoteEligibilityTweetFields%22%3A+true%2C+%22withVoice%22%3A+true%2C+%22withV2Timeline%22%3A+true%7D&features=%7B%22rweb_tipjar_consumption_enabled%22%3A+true%2C+%22responsive_web_graphql_exclude_directive_enabled%22%3A+true%2C+%22verified_phone_label_enabled%22%3A+false%2C+%22creator_subscriptions_tweet_preview_api_enabled%22%3A+true%2C+%22responsive_web_graphql_timeline_navigation_enabled%22%3A+true%2C+%22responsive_web_graphql_skip_user_profile_image_extensions_enabled%22%3A+false%2C+%22communities_web_enable_tweet_community_results_fetch%22%3A+true%2C+%22c9s_tweet_anatomy_moderator_badge_enabled%22%3A+true%2C+%22articles_preview_enabled%22%3A+true%2C+%22tweetypie_unmention_optimization_enabled%22%3A+true%2C+%22responsive_web_edit_tweet_api_enabled%22%3A+true%2C+%22graphql_is_translatable_rweb_tweet_is_translatable_enabled%22%3A+true%2C+%22view_counts_everywhere_api_enabled%22%3A+true%2C+%22longform_notetweets_consumption_enabled%22%3A+true%2C+%22responsive_web_twitter_article_tweet_consumption_enabled%22%3A+true%2C+%22tweet_awards_web_tipping_enabled%22%3A+false%2C+%22creator_subscriptions_quote_tweet_preview_enabled%22%3A+false%2C+%22freedom_of_speech_not_reach_fetch_enabled%22%3A+true%2C+%22standardized_nudges_misinfo%22%3A+true%2C+%22tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled%22%3A+true%2C+%22rweb_video_timestamps_enabled%22%3A+true%2C+%22longform_notetweets_rich_text_read_enabled%22%3A+true%2C+%22longform_notetweets_inline_media_enabled%22%3A+true%2C+%22responsive_web_enhance_cards_enabled%22%3A+false%7D HTTP/1.1" 200 36886
+2024-06-08 23:30:55,129 [DEBUG] [Line No. 155] tweeterpy.util : check_api_rate_limits :: {'total_limit': 50, 'remaining_requests_count': 49, 'resets_after': '0 Hours, 14 Minutes, 58.87 Seconds', 'reset_after_datetime_object': datetime.timedelta(seconds=898, microseconds=870331), 'rate_limit_exhausted': False}
+2024-06-08 23:34:21,119 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:34:21,121 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:34:21,709 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:34:21,712 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:34:22,277 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373836393836327dd50ec538a32865dd050dbabbe6eedf1b HTTP/1.1" 200 None
+2024-06-08 23:34:22,554 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:34:22,835 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:34:23,143 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x0000029449222550>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:34:23,144 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:34:23,785 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:34:23,788 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:34:23,788 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:34:23,788 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x0000029449222550>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:34:24,064 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:34:24,300 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:34:24,302 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x0000029449222550>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:34:24,302 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:34:24,409 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:34:24,622 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:34:24,629 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:34:24,629 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:35:24,387 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:35:24,388 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:35:25,029 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:35:25,032 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:35:25,658 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373836393932357d607c0a75eabcc750bc5fb3f7f657e328 HTTP/1.1" 200 None
+2024-06-08 23:35:25,953 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:35:26,273 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:35:26,609 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x0000025D0918DE10>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:35:26,610 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:35:27,505 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:35:27,506 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:35:27,508 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:35:27,508 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x0000025D0918DE10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:35:27,806 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:35:28,012 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:35:28,014 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x0000025D0918DE10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:35:28,015 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:35:28,094 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:35:28,276 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:35:28,284 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:35:28,285 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:35:57,556 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:35:57,559 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:35:58,184 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:35:58,188 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:35:58,812 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373836393935387d8b7803f80aef2ba8d18f23fd116bfd64 HTTP/1.1" 200 None
+2024-06-08 23:35:59,132 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:35:59,434 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:35:59,754 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x000001C117B90A10>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:35:59,755 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:36:00,372 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:36:00,376 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:36:00,376 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:36:00,376 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x000001C117B90A10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:36:00,669 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:36:00,892 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:36:00,892 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x000001C117B90A10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:36:00,893 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:36:00,984 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:36:01,242 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:36:01,247 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:36:01,248 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:38:06,623 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:38:06,625 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:38:07,217 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:38:07,220 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:38:07,868 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373837303038387dde2aa648da01f09953351f57567217e8 HTTP/1.1" 200 None
+2024-06-08 23:38:08,141 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:38:08,424 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:38:08,774 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x0000019A0FC25B10>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:38:08,774 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:38:09,387 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:38:09,388 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:38:09,388 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:38:09,388 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x0000019A0FC25B10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:38:09,663 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:38:09,871 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:38:09,873 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x0000019A0FC25B10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:38:09,873 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:38:10,005 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:38:10,282 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:38:10,288 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:38:10,288 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:38:27,893 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:38:27,895 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:38:28,745 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:38:28,748 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:38:29,309 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373837303130397dd768405e50b10b375dbfae2c206cd6e3 HTTP/1.1" 200 None
+2024-06-08 23:38:29,663 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:38:29,962 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:38:30,297 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x000002C2FE9C2C10>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:38:30,299 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:38:30,904 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:38:30,906 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:38:30,907 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:38:30,907 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x000002C2FE9C2C10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:38:31,206 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:38:31,412 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:38:31,414 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x000002C2FE9C2C10>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:38:31,415 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:38:31,526 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:38:31,741 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:38:31,748 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:38:31,748 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:42:09,748 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:42:09,749 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:42:11,384 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:42:11,387 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:42:11,956 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373837303333327d4a800341fdd1edde8c6f166c1d84938b HTTP/1.1" 200 None
+2024-06-08 23:42:12,251 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:42:12,549 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:42:12,893 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x0000029E9F725E50>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:42:12,894 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:42:13,511 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:42:13,514 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:42:13,514 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:42:13,514 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x0000029E9F725E50>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:42:13,811 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:42:14,034 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:42:14,035 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x0000029E9F725E50>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:42:14,036 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:42:14,103 [DEBUG] [Line No. 43] tweeterpy.request_util : make_request :: Retry No. ==> 1
+2024-06-08 23:42:14,106 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (2): abs.twimg.com:443
+2024-06-08 23:42:14,135 [DEBUG] [Line No. 43] tweeterpy.request_util : make_request :: Retry No. ==> 2
+2024-06-08 23:42:14,135 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (3): abs.twimg.com:443
+2024-06-08 23:42:14,156 [DEBUG] [Line No. 43] tweeterpy.request_util : make_request :: Retry No. ==> 3
+2024-06-08 23:42:14,156 [ERROR] [Line No. 45] tweeterpy.request_util : make_request :: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+Traceback (most recent call last):
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 783, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 471, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 515, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1108, in _create
+    self.do_handshake()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1383, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 783, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 471, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\ssl_.py", line 515, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1108, in _create
+    self.do_handshake()
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1383, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\tweeterpy\request_util.py", line 26, in make_request
+    response = session.request(method, url, timeout=timeout, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tusha\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 604, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2024-06-08 23:42:14,172 [WARNING] [Line No. 49] tweeterpy.api_util : __init__ :: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)) Couldn't get the latest API data.
+2024-06-08 23:42:14,172 [DEBUG] [Line No. 50] tweeterpy.api_util : __init__ :: Trying to restore API data from the backup file.
+2024-06-08 23:42:14,173 [DEBUG] [Line No. 171] tweeterpy.api_util : _load_api_data :: Restoring API data from the backup file.
+2024-06-08 23:42:14,180 [DEBUG] [Line No. 176] tweeterpy.api_util : _load_api_data :: API data restored successfully.
+2024-06-08 23:42:14,181 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:44:33,986 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:44:33,988 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:44:34,564 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:44:34,566 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:44:35,182 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373837303437357de9e9998667673374260d7c41d57d61c0 HTTP/1.1" 200 None
+2024-06-08 23:44:35,446 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:44:35,707 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:44:36,003 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x000002384D76E250>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:44:36,004 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:44:36,667 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 61
+2024-06-08 23:44:36,671 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:44:36,671 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:44:36,671 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x000002384D76E250>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:44:36,955 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:44:37,180 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:44:37,181 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x000002384D76E250>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:44:37,182 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:44:37,352 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:44:37,543 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:44:37,549 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:44:37,550 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:45:40,807 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:45:40,807 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:45:41,636 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:45:41,641 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:45:42,286 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373837303534327d103a6a64649cb95c2c5d853691d931cc HTTP/1.1" 200 None
+2024-06-08 23:45:42,563 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:45:42,860 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:45:43,184 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x00000238254CFC90>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:45:43,185 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:45:43,805 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:45:43,807 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:45:43,807 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:45:43,809 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x00000238254CFC90>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:45:44,093 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:45:44,305 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:45:44,306 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x00000238254CFC90>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:45:44,307 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:45:44,471 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:45:44,800 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:45:44,807 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:45:44,807 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:48:06,957 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:48:06,958 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:48:07,552 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:48:07,556 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:48:08,214 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373837303638387d901b81644284491b1e1bf860f6a4d826 HTTP/1.1" 200 None
+2024-06-08 23:48:08,530 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:48:08,821 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:48:09,137 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x000001F0CB890690>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:48:09,138 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:48:09,857 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:48:09,858 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:48:09,858 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:48:09,858 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x000001F0CB890690>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:48:10,146 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:48:10,367 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:48:10,368 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x000001F0CB890690>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:48:10,368 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:48:10,484 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:48:10,670 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:48:10,675 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:48:10,676 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.
+2024-06-08 23:50:15,385 [DEBUG] [Line No. 155] tweeterpy.tweeterpy : generate_session :: Trying to generate a new session.
+2024-06-08 23:50:15,387 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): x.com:443
+2024-06-08 23:50:16,029 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:50:16,035 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): twitter.com:443
+2024-06-08 23:50:16,665 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://twitter.com:443 "GET /x/migrate?tok=7b2265223a222f222c2274223a313731373837303831367da1a631baf6bb4a5440fb47175abd241e HTTP/1.1" 200 None
+2024-06-08 23:50:16,937 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "POST /x/migrate HTTP/1.1" 302 54
+2024-06-08 23:50:17,213 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET /?mx=2 HTTP/1.1" 200 None
+2024-06-08 23:50:17,514 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://api.x.com/1.1/guest/activate.json', 'session': <requests.sessions.Session object at 0x000001636681F290>, 'method': 'POST', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:50:17,515 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): api.x.com:443
+2024-06-08 23:50:18,099 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://api.x.com:443 "POST /1.1/guest/activate.json HTTP/1.1" 200 63
+2024-06-08 23:50:18,103 [DEBUG] [Line No. 180] tweeterpy.tweeterpy : generate_session :: Session has been generated.
+2024-06-08 23:50:18,103 [DEBUG] [Line No. 30] tweeterpy.api_util : __init__ :: Updating API...
+2024-06-08 23:50:18,103 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://x.com/', 'session': <requests.sessions.Session object at 0x000001636681F290>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:50:18,394 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://x.com:443 "GET / HTTP/1.1" 200 None
+2024-06-08 23:50:18,620 [DEBUG] [Line No. 83] tweeterpy.api_util : _get_main_file_url :: Main File Url => https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js
+2024-06-08 23:50:18,621 [DEBUG] [Line No. 22] tweeterpy.request_util : make_request :: {'url': 'https://abs.twimg.com/responsive-web/client-web/main.effb6a8a.js', 'session': <requests.sessions.Session object at 0x000001636681F290>, 'method': 'GET', 'max_retries': 3, 'timeout': 5, 'skip_error_checking': False, 'kwargs': {}}
+2024-06-08 23:50:18,622 [DEBUG] [Line No. 1053] urllib3.connectionpool : _new_conn :: Starting new HTTPS connection (1): abs.twimg.com:443
+2024-06-08 23:50:18,704 [DEBUG] [Line No. 547] urllib3.connectionpool : _make_request :: https://abs.twimg.com:443 "GET /responsive-web/client-web/main.effb6a8a.js HTTP/1.1" 200 374469
+2024-06-08 23:50:18,876 [DEBUG] [Line No. 156] tweeterpy.api_util : _save_api_data :: Saving API data to the temp file.
+2024-06-08 23:50:18,882 [DEBUG] [Line No. 159] tweeterpy.api_util : _save_api_data :: API data saved successfully.
+2024-06-08 23:50:18,882 [INFO] [Line No. 56] tweeterpy.api_util : __init__ :: API Updated Successfully.

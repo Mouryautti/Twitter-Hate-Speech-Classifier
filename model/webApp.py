@@ -49,6 +49,7 @@ if username != '' and '@' not in username:
         results[predicted_label].append(tweet)
         all_tweets_text += " " + tweet
 
+    '''
     # Count the number of tweets in each category
     categories = list(results.keys())
     counts = [len(results[category]) for category in categories]
@@ -81,3 +82,7 @@ if username != '' and '@' not in username:
         st.pyplot(piefig)
     with col3:
         st.pyplot(wordcloud_fig)
+
+        '''
+    
+    st.write(results)
