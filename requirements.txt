@@ -2,7 +2,8 @@ streamlit
 matplotlib
 wordcloud
 joblib
-sklearn
+scikit-learn
+tweeterpy
 pandas
 numpy
 nltk
