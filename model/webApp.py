@@ -14,7 +14,7 @@ cv = joblib.load('count_vectorizer.pkl')
 def load_model_data():
     # Simulate loading data
     model_name = "Hate Speech Detection Model"
-    accuracy = 0.85
+    accuracy = 0.89
     precision = 0.78
     recall = 0.92
     return model_name, accuracy, precision, recall
