@@ -4,7 +4,10 @@ from wordcloud import WordCloud
 from tweets import gather_tweets
 import joblib
 import useModel
- 
+import detoxModel
+from detoxify import Detoxify
+import time
+
 clf = joblib.load('hate_speech_classifier.pkl')
 cv = joblib.load('count_vectorizer.pkl')
 
@@ -34,51 +37,78 @@ st.title('Hate Speech Classifier')
 input_text = st.text_input('Enter a twitter handle:', '@')
  
 username = input_text.lstrip('@')
+
+
 if username != '' and '@' not in username:
     results = {}
+    success_message = st.empty()
 
     print(f"Username: {username}")
     with st.spinner('Gathering tweets...'):
         tweets = gather_tweets(username)
-    st.success('Tweets gathered successfully!')
-    all_tweets_text = ""
-    for tweet in tweets:
-        predicted_label = useModel.predict_sentence(tweet, cv, clf)
-        if predicted_label not in results:
-            results[predicted_label] = []
-        results[predicted_label].append(tweet)
-        all_tweets_text += " " + tweet
+    success_message.success('Tweets gathered successfully!')
+    
+    with st.spinner('Analyzing tweets...'):
+        all_tweets_text = ""
+        for tweet in tweets:
+            all_tweets_text += tweet + " "
+        tweets = [useModel.clean(tweet) for tweet in tweets]
+        results = Detoxify('unbiased').predict(tweets)
+        classified_tweets = detoxModel.classify_tweets(tweets, results)
 
+        label_counts = {
+                'Hate speech': 0,
+                'toxicity': 0,
+                'severe_toxicity': 0,
+                'obscene': 0,
+                'threat': 0,
+                'insult': 0,
+                'identity_attack': 0,
+                'No hate speech': 0
+            }
 
-    # Count the number of tweets in each category
-    categories = list(results.keys())
-    counts = [len(results[category]) for category in categories]
+        for classified_tweet in classified_tweets:
+            label_counts[classified_tweet['classification']] += 1
 
-    # Create a bar graph
-    fig, ax = plt.subplots(figsize=(5, 4))  # Adjust the figure size for smaller graph
-    ax.bar(categories, counts)
-    ax.set_xlabel('Category')
-    ax.set_ylabel('Number of Tweets')
-    ax.set_title('Number of Tweets per Category')
-    ax.set_xticklabels(categories, rotation=45, ha='right')  # Rotate labels for better readability
+            # Print the counts
+        for label, count in label_counts.items():
+            print(f"Number of tweets classified as '{label}': {count}")
+            
+            #st.write(label_counts)
+            # Count the number of tweets in each category
+        categories = list(results.keys())
+        counts = [len(results[category]) for category in categories]
 
-    # Create a word cloud
-    wordcloud = WordCloud(width=480, height=320, background_color='white').generate(all_tweets_text)
-    wordcloud_fig, wordcloud_ax = plt.subplots(figsize=(5, 4))  # Adjust the figure size for smaller word cloud
-    wordcloud_ax.imshow(wordcloud, interpolation='bilinear')
-    wordcloud_ax.axis('off')
-    wordcloud_ax.set_title('Word Cloud of Tweets')
+            # Create a bar graph
+        fig, ax = plt.subplots(figsize=(8, 6))
+        ax.bar(label_counts.keys(), label_counts.values())
+        ax.set_xlabel('Category')
+        ax.set_ylabel('Number of Tweets')
+        ax.set_title('Number of Tweets per Category')
+        ax.set_xticklabels(label_counts.keys(), rotation=45, ha='right')
 
-    # Create a pie chart
-    piefig, ax = plt.subplots(figsize=(6, 6))  # Adjust the figure size
-    ax.pie(counts, labels=categories, autopct='%1.1f%%', startangle=140)
-    ax.set_title('Distribution of Tweets by Category')
+        # Create a word cloud
+        wordcloud = WordCloud(width=800, height=600, background_color='white').generate(all_tweets_text)
+        wordcloud_fig, wordcloud_ax = plt.subplots(figsize=(8, 6))
+        wordcloud_ax.imshow(wordcloud, interpolation='bilinear')
+        wordcloud_ax.axis('off')
+        wordcloud_ax.set_title('Word Cloud of Tweets')
 
-    # Display the visualizations side by side
-    col1, col2, col3 = st.columns(3)
-    with col1:
+        # Create a pie chart
+        piefig, ax = plt.subplots(figsize=(8, 8))
+        wedges, _, _ = ax.pie(label_counts.values(), autopct='%1.1f%%', startangle=140)
+
+        # Set the legend
+        ax.legend(label_counts.keys(), loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+
+        ax.set_title('Distribution of Tweets by Category')
+
+        legend = ax.legend(label_counts.keys(), loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+        plt.setp(legend.get_texts(), fontsize='medium')
+
         st.pyplot(fig)
-    with col2:
-        st.pyplot(piefig)
-    with col3:
         st.pyplot(wordcloud_fig)
+        st.pyplot(piefig)
+    success_message.success('Tweets classified successfully!')
+    time.sleep(5)  # Display for 5 seconds
+    success_message.empty()  # Clear the success message slot

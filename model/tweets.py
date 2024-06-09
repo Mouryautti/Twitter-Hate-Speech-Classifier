@@ -2,6 +2,7 @@ import time, random
 from tweeterpy import TweeterPy
 from tweeterpy import config
 from tweeterpy.util import RateLimitError
+from detoxify import Detoxify
 
 # Check Configuration docs for the available settings.
 # config.PROXY = {"http":"127.0.0.1","https":"127.0.0.1"}
