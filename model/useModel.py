@@ -5,7 +5,7 @@ from nltk.corpus import stopwords
 import string
 
 # Download stopwords if not already downloaded
-nltk.download('stopwords')
+#nltk.download('stopwords')
 
 # Load stopwords
 stopwords = set(stopwords.words("english"))

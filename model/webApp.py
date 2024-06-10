@@ -21,7 +21,7 @@ def load_model_data():
 
 
 model_name, accuracy, precision, recall = load_model_data()
- 
+
 # Sidebar with model data and information about hate speech
 st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/900px-X_logo.jpg", width=100)
 st.sidebar.title("Model Information")
@@ -109,6 +109,17 @@ if username != '' and '@' not in username:
         st.pyplot(fig)
         st.pyplot(wordcloud_fig)
         st.pyplot(piefig)
+
+        for label in label_counts.keys():
+            tweets_for_label = [tweet['tweet'] for tweet in classified_tweets if tweet['classification'] == label]
+            if tweets_for_label:
+                st.header(f"Top Tweets for '{label}'")
+                top_tweets = tweets_for_label[:3]  # Get up to 3 tweets
+                for i, tweet in enumerate(top_tweets, start=1):
+                    st.write(f"{i}. {tweet}")
+            else:
+                pass
+
     success_message.success('Tweets classified successfully!')
     time.sleep(5)  # Display for 5 seconds
     success_message.empty()  # Clear the success message slot
