@@ -47,9 +47,9 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.image("https://media.licdn.com/dms/image/D5603AQE7DKqd2joj_w/profile-displayphoto-shrink_200_200/0/1687684622536?e=2147483647&v=beta&t=fVyomGdI3uqIxZVMlGvwB4zVPMQtAQkdH7nVDPWT5cg", caption="Tushar Singh", use_column_width=True)
 with col2:
-    st.image("https://media.licdn.com/dms/image/C4D03AQHwq-JPNHtf8Q/profile-displayphoto-shrink_200_200/0/1643511930170?e=2147483647&v=beta&t=_sg-qGfr-DLpUJJyJ7Q0vChdJ5jmhQHpl-RCnqaIiBc", caption="Rudraksh Kumar", use_column_width=True)
-with col3:
     st.image("https://via.placeholder.com/150x150.png?text=Charlie+Davis", caption="Charlie Davis", use_column_width=True)
+with col3:
+    st.image("https://media.licdn.com/dms/image/C4D03AQHwq-JPNHtf8Q/profile-displayphoto-shrink_200_200/0/1643511930170?e=2147483647&v=beta&t=_sg-qGfr-DLpUJJyJ7Q0vChdJ5jmhQHpl-RCnqaIiBc", caption="Rudraksh Kumar", use_column_width=True)
 with col4:
     st.image("https://media.licdn.com/dms/image/D5603AQFHZnsRR8lRYg/profile-displayphoto-shrink_200_200/0/1672671260212?e=2147483647&v=beta&t=ZUaHMoSVBAeK-wn9JDROLCJHUX1o16DpyEjvLDTssy8", caption="VPS Konda Reddy", use_column_width=True)
 

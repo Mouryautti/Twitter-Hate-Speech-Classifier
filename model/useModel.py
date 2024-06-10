@@ -11,8 +11,8 @@ import string
 stopwords = set(stopwords.words("english"))
 
 # Load the model and CountVectorizer
-#clf = joblib.load('hate_speech_classifier.pkl')
-#cv = joblib.load('count_vectorizer.pkl')
+clf = joblib.load('hate_speech_classifier.pkl')
+cv = joblib.load('count_vectorizer.pkl')
 
 # Clean function
 def clean(text):
