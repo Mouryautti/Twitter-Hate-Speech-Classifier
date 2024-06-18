@@ -8,8 +8,8 @@ import detoxModel
 from detoxify import Detoxify
 import time
 
-clf = joblib.load('hate_speech_classifier.pkl')
-cv = joblib.load('count_vectorizer.pkl')
+#clf = joblib.load('hate_speech_classifier.pkl')
+#cv = joblib.load('count_vectorizer.pkl')
 
 def load_model_data():
     # Simulate loading data
