@@ -8,7 +8,7 @@ import string
 #nltk.download('stopwords')
 
 # Load stopwords
-stopwords = set(stopwords.words("english"))
+#stopwords = set(stopwords.words("english"))
 
 # Load the model and CountVectorizer
 clf = joblib.load('hate_speech_classifier.pkl')
@@ -23,7 +23,6 @@ def clean(text):
     text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
     text = re.sub('\n', '', text)
     text = re.sub('\w*\d\w*', '', text)
-    text = ' '.join(word for word in text.split(' ') if word not in stopwords)
     return text
 
 # Function to predict a sentence
