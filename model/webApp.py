@@ -7,6 +7,9 @@ import useModel
 import detoxModel
 from detoxify import Detoxify
 import time
+import nltk
+
+nltk.download('stopwords')
 
 clf = joblib.load('hate_speech_classifier.pkl')
 cv = joblib.load('count_vectorizer.pkl')
